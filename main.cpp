@@ -8,12 +8,12 @@ int main() {
     
     cout << "Hello World" << endl;
 
-    InitWindow(300, 300, "My first Raylib window!");
+    InitWindow(500, 500, "Raylib Gaming!");
     SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
         BeginDrawing();
-        ClearBackground(DARKGREEN);
+        ClearBackground(BLACK);
         EndDrawing();
     }
 
