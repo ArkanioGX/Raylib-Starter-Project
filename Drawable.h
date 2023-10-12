@@ -1,12 +1,14 @@
 #pragma once
 #include "raylib.h"
 #include <vector>
+#include "GameObject.h"
 
 using namespace std;
 
 class Drawable
 {
-	Vector2 position;
+	GameObject* gameObject;
+	Vector2 offsetPosition;
 	Vector2 size;
 
 	float depth;
@@ -27,6 +29,8 @@ public:
 	static void DrawAll();
 
 	Vector2 getPos();
+
+	Vector2 getOffset();
 
 	Vector2 getSize();
 

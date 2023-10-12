@@ -3,7 +3,7 @@
 vector<Drawable*> Drawable::drawableList = {  };
 
 Drawable::Drawable() {
-	position = Vector2{ 0, 0 };
+	offsetPosition = Vector2{ 0, 0 };
 	size = Vector2{ 1,1 };
 	depth = 0;
 
@@ -11,7 +11,7 @@ Drawable::Drawable() {
 }
 
 Drawable::Drawable(Vector2 p, Vector2 s) {
-	position = p;
+	offsetPosition = p;
 	size = s;
 	depth = 0;
 
@@ -19,7 +19,7 @@ Drawable::Drawable(Vector2 p, Vector2 s) {
 }
 
 Drawable::Drawable(Vector2 p, Vector2 s, float d) {
-	position = p;
+	offsetPosition = p;
 	size = s;
 	depth = d;
 
@@ -56,5 +56,6 @@ void Drawable::DrawAll() {
 	}
 }
 
-Vector2 Drawable::getPos() {return position;}
+Vector2 Drawable::getOffset() {return offsetPosition;}
+Vector2 Drawable::getPos() { return gameObject->getPos(); }
 Vector2 Drawable::getSize() { return size; }
