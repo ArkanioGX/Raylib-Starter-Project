@@ -136,12 +136,13 @@
     <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Shape.cpp" />
-    <ClCompile Include="Texture.cpp" />
+    <ClCompile Include="TextureD.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Drawable.h" />
     <ClInclude Include="Shape.h" />
-    <ClInclude Include="Texture.h" />
+    <ClInclude Include="ShapeType.h" />
+    <ClInclude Include="TextureD.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
