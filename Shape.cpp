@@ -1,7 +1,7 @@
 #include "Shape.h"
 
 Shape::Shape():Drawable() {
-	shColor = BLACK;
+	shColor = RAYWHITE;
 	shType = ShapeType::Rectangle;
 }
 
@@ -10,22 +10,33 @@ Shape::Shape(Vector2 p, Vector2 s, ShapeType st, Color c) :Drawable(p,s) {
 	shColor = c;
 }
 
-Shape::Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float d) :Drawable(p, s, d) {
+Shape::Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float r) :Drawable(p, s, r) {
+	shType = st;
+	shColor = c;
+}
+
+Shape::Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float r, float d) :Drawable(p, s,r , d) {
+	shType = st;
+	shColor = c;
+}
+
+Shape::Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float r, float d, TransformD* t) :Drawable(p, s, r, d, t) {
 	shType = st;
 	shColor = c;
 }
 
 
 void Shape::Draw() {
+	TransformD* t = getTransform();
 	switch (shType) {
 	case ShapeType::Rectangle:
-		DrawRectangleV(getPos(), getSize(), shColor);
+		DrawRectangleV(Vector2{t->position.x + getOffset().x,t->position.y+getOffset().y}, Vector2{ t->size.x + getSize().x,t->size.y + getSize().y }, shColor);
 		break;
 	case ShapeType::Ellipse:
-		DrawEllipse(getPos().x, getPos().y, getSize().x, getSize().y, shColor);
+		DrawEllipse((t->position.x + getOffset().x), (t->position.y + getOffset().y), (t->size.x*getSize().x), (t->size.y * getSize().y), shColor);
 		break;
 	case ShapeType::Line:
-		DrawLineV(getPos(), getSize(), shColor);
+		DrawLineV(Vector2{ t->position.x + getOffset().x,t->position.y + getOffset().y }, Vector2{ t->size.x + getSize().x,t->size.y + getSize().y }, shColor);
 		break;
 	default:
 

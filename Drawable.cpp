@@ -6,6 +6,7 @@ Drawable::Drawable() {
 	offsetPosition = Vector2{ 0, 0 };
 	size = Vector2{ 1,1 };
 	depth = 0;
+	transform = new TransformD;
 
 	InsertDrawableInList(this);
 }
@@ -14,14 +15,36 @@ Drawable::Drawable(Vector2 p, Vector2 s) {
 	offsetPosition = p;
 	size = s;
 	depth = 0;
+	transform = new TransformD;
 
 	InsertDrawableInList(this);
 }
 
-Drawable::Drawable(Vector2 p, Vector2 s, float d) {
+Drawable::Drawable(Vector2 p, Vector2 s, float r) {
 	offsetPosition = p;
 	size = s;
+	rotation = r;
+	transform = new TransformD;
+
+	InsertDrawableInList(this);
+}
+
+Drawable::Drawable(Vector2 p, Vector2 s, float r, float d) {
+	offsetPosition = p;
+	size = s;
+	rotation = r;
 	depth = d;
+	transform = new TransformD;
+
+	InsertDrawableInList(this);
+}
+
+Drawable::Drawable(Vector2 p, Vector2 s, float r, float d, TransformD* t) {
+	offsetPosition = p;
+	size = s;
+	rotation = r;
+	depth = d;
+	transform = t;
 
 	InsertDrawableInList(this);
 }
@@ -57,5 +80,6 @@ void Drawable::DrawAll() {
 }
 
 Vector2 Drawable::getOffset() {return offsetPosition;}
-Vector2 Drawable::getPos() { return gameObject->getPos(); }
+TransformD* Drawable::getTransform() { return transform; }
 Vector2 Drawable::getSize() { return size; }
+float Drawable::getRotation() { return rotation; }

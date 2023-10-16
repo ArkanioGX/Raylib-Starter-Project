@@ -11,7 +11,9 @@ class Shape : public Drawable
 public:
 	Shape();
 	Shape(Vector2 p, Vector2 s,ShapeType st, Color c);
-	Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float d);
+	Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float r);
+	Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float r, float d);
+	Shape(Vector2 p, Vector2 s, ShapeType st, Color c, float r, float d, TransformD* t);
 
 	Color getColor();
 

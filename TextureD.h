@@ -17,8 +17,14 @@ public:
 	TextureD(Vector2 p, Vector2 s, string fp, Color tnt);
 	TextureD(Vector2 p, Vector2 s, Texture2D tex, Color tnt);
 
-	TextureD(Vector2 p, Vector2 s, string fp, Color tnt, float d);
-	TextureD(Vector2 p, Vector2 s, Texture2D tex, Color tnt, float d);
+	TextureD(Vector2 p, Vector2 s, string fp, Color tnt, float r);
+	TextureD(Vector2 p, Vector2 s, Texture2D tex, Color tnt, float r);
+
+	TextureD(Vector2 p, Vector2 s, string fp, Color tnt, float r, float d);
+	TextureD(Vector2 p, Vector2 s, Texture2D tex, Color tnt, float r, float d);
+
+	TextureD(Vector2 p, Vector2 s, string fp, Color tnt, float r, float d, TransformD* t);
+	TextureD(Vector2 p, Vector2 s, Texture2D tex, Color tnt, float r, float d, TransformD* t);
 
 	void Draw();
 };
