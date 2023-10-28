@@ -7,24 +7,22 @@ using namespace std;
 
 class Drawable
 {
+<<<<<<< HEAD
 	GameObject* gameObject;
 	Vector2 offsetPosition;
 	Vector2 size;
+=======
+	Vector2 Position;
+	Vector2 Size;
+>>>>>>> parent of cba29f9 (Dessin Texture Forme + ZDepth)
 
-	float depth;
-
-	static vector<Drawable*> drawableList;
+	static vector<Drawable*> DrawableList;
 	
 public:
 	Drawable();
-	Drawable(Vector2 p, Vector2 s);
-	Drawable(Vector2 p, Vector2 s, float d);
-
-	~Drawable();
-
-	void InsertDrawableInList(Drawable* d);
-
+	Drawable(Vector2 pos);
 	virtual void Draw() = 0;
+<<<<<<< HEAD
 
 	static void DrawAll();
 
@@ -34,5 +32,7 @@ public:
 
 	Vector2 getSize();
 
+=======
+>>>>>>> parent of cba29f9 (Dessin Texture Forme + ZDepth)
 };
 

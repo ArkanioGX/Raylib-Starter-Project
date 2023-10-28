@@ -21,7 +21,7 @@
     <ClCompile Include="Drawable.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
-    <ClCompile Include="TextureD.cpp">
+    <ClCompile Include="Texture.cpp">
       <Filter>Fichiers sources</Filter>
     </ClCompile>
     <ClCompile Include="Shape.cpp">
@@ -38,12 +38,13 @@
     <ClInclude Include="Drawable.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
-    <ClInclude Include="TextureD.h">
+    <ClInclude Include="Texture.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
     <ClInclude Include="Shape.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+<<<<<<< HEAD
     <ClInclude Include="ShapeType.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
@@ -53,5 +54,7 @@
     <ClInclude Include="GameObject.h">
       <Filter>Fichiers d%27en-tête</Filter>
     </ClInclude>
+=======
+>>>>>>> parent of cba29f9 (Dessin Texture Forme + ZDepth)
   </ItemGroup>
 </Project>

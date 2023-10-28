@@ -1,8 +1,7 @@
 #include "Drawable.h"
 
-vector<Drawable*> Drawable::drawableList = {  };
-
 Drawable::Drawable() {
+<<<<<<< HEAD
 	offsetPosition = Vector2{ 0, 0 };
 	size = Vector2{ 1,1 };
 	depth = 0;
@@ -59,3 +58,10 @@ void Drawable::DrawAll() {
 Vector2 Drawable::getOffset() {return offsetPosition;}
 Vector2 Drawable::getPos() { return gameObject->getPos(); }
 Vector2 Drawable::getSize() { return size; }
+=======
+	Position = Vector2{ 0, 0 };
+	Size = Vector2{ 1,1 };
+
+	DrawableList.push_back(this);
+}
+>>>>>>> parent of cba29f9 (Dessin Texture Forme + ZDepth)
