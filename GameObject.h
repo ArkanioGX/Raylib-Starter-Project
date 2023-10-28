@@ -1,12 +1,16 @@
 #pragma once
 
+class TransformD;
 class Drawable;
 class GameObject
 {
 private:
 	Drawable* drawable;
-	Vector2 position;
+	TransformD* transform;
 public:
-	Vector2 getPosition();
+	GameObject();
+	GameObject(TransformD* t, Drawable* d);
+
+	TransformD* getTransform();
 };
 
